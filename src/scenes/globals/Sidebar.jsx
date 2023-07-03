@@ -25,7 +25,7 @@ const SideBar = () => {
   const colors = tokens(theme.palette.mode);
   const [isCollapsed,setIsCollapsed] = useState(false);
   const [selected,setSelected] = useState("Dashboard");
-
+  
   return (
     <Box sx={{
       "& .pro-sidebar-inner":{
@@ -54,8 +54,34 @@ const SideBar = () => {
               color:colors.grey[100]
             }}
           >
-
+            {
+              !isCollapsed && (
+                <Box display="flex" alignItems='center' justifyContent='space-between' ml='15px'>
+                  <Typography variant='h3' color={colors.grey[100]}>ADMINEX</Typography>
+                  <IconButton onClick={()=>setIsCollapsed(!isCollapsed)}>
+                    <MenuOutlinedIcon/>
+                  </IconButton>
+                </Box>
+              )
+            }
           </MenuItem>
+          {/* USER */}
+          {
+            !isCollapsed && (
+              <Box mb='25px'>
+                <Box display='flex' justifyContent='center' alignItems='center'>
+                  <img alt='profile-pic' src='https://randomuser.me/api/portraits/women/67.jpg' width='100px' height='100px' style={{
+                    cursor:'pointer',
+                    borderRadius:'50%'
+                  }}></img>
+                </Box>
+                <Box textAlign='center'>
+                  <Typography variant="h3" mt="10px" color={colors.grey[100]} fontWeight="bold">Ray Nath</Typography>
+                  <Typography variant='h5' color={colors.greenAccent[500]}>Admin</Typography>
+                </Box>
+              </Box>
+            )
+          }
         </Menu>
       </ProSidebar>
     </Box>
