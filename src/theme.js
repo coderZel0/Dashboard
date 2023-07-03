@@ -21,7 +21,7 @@ export const tokens = (mode)=>({
             100: "#d0d1d5",
             200: "#a1a4ab",
             300: "#727681",
-            400: "#434957",
+            400: "#1F2A40",
             500: "#141b2d",
             600: "#101624",
             700: "#0c101b",
@@ -126,40 +126,42 @@ export const themeSettings= (mode) =>{
     const colors = tokens(mode);
 
     return{
-        mode,
-        ...(mode==='dark'?{
-            primary:{
-                main:colors.primary[500],
-            },
-            secondary:{
-                main:colors.greenAccent[500],
-            },
-            neutral:{
-                main:colors.grey[500],
-                dark:colors.grey[700],
-                light:colors.grey[100]
-            },
-            
-            background:{
-                default:colors.primary[500],
-            }
-        }:{
-            primary:{
-                main:colors.primary[100],
-            },
-            secondary:{
-                main:colors.greenAccent[500],
-            },
-            neutral:{
-                main:colors.grey[500],
-                dark:colors.grey[700],
-                light:colors.grey[100]
-            },
-            
-            background:{
-                default:"#fcfcfc",
-            }
-        }),
+        palette:{
+            mode,
+            ...(mode==='dark'?{
+                primary:{
+                    main:colors.primary[500],
+                },
+                secondary:{
+                    main:colors.greenAccent[500],
+                },
+                neutral:{
+                    main:colors.grey[500],
+                    dark:colors.grey[700],
+                    light:colors.grey[100]
+                },
+                
+                background:{
+                    default:colors.primary[500],
+                }
+            }:{
+                primary:{
+                    main:colors.primary[100],
+                },
+                secondary:{
+                    main:colors.greenAccent[500],
+                },
+                neutral:{
+                    main:colors.grey[500],
+                    dark:colors.grey[700],
+                    light:colors.grey[100]
+                },
+                
+                background:{
+                    default:"#fcfcfc",
+                }
+            })
+        },
         typography:{
             fontFamily:['Source Sans 3','sans-serif'].join(","),
             fontSize: 12,
