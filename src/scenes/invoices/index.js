@@ -14,7 +14,6 @@ const Invoices = () => {
         {field:"id",headerName:"ID"},
         
         {field:"name",headerName:"Name",flex:1,cellClassName:"name-column--cell"},
-        {field:"age",headerName:"Age",type:"number",headerAlign:"left",align:"left"},
         {field:"email",headName:"Email",flex:1},
         {field:"phone",headerName:"Phone Number",flex:1},
         {field:"cost" , headerName:"Cost" ,flex:1 , renderCell:({row:{cost}})=>{
